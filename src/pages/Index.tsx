@@ -4,6 +4,19 @@ import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import { ProjectCard, type Project } from '@/components/ProjectCard';
+
+// Featured project
+const featuredProject: Project = {
+  id: '1',
+  title: 'Ethica Labs',
+  description: 'Building ethical and sustainable digital solutions.',
+  tags: ['Sustainability', 'Ethics', 'Technology'],
+  image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c',
+  githubUrl: 'https://github.com/nagavaishak',
+  liveUrl: 'https://ethicalabs.netlify.app/',
+  slug: 'ethica-labs',
+};
 
 const Index = () => {
   return (
@@ -64,21 +77,8 @@ const Index = () => {
                 <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Project cards will go here when we implement the projects page */}
-              <div className="border border-border rounded-lg p-6 space-y-4">
-                <h3 className="text-xl font-medium">Ethica Labs</h3>
-                <p className="text-muted-foreground">Building ethical and sustainable digital solutions.</p>
-                <a 
-                  href="https://ethicalabs.netlify.app/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-primary hover:underline"
-                >
-                  Visit Site
-                  <ArrowRight size={14} />
-                </a>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+              <ProjectCard project={featuredProject} />
             </div>
           </AnimatedSection>
         </section>
