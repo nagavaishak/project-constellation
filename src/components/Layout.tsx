@@ -22,7 +22,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       </motion.main>
       <footer className="py-6 border-t border-border">
         <div className="container text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Portfolio. All rights reserved.
+          © {new Date().getFullYear()} Naga Vaishak S K. All rights reserved.
         </div>
       </footer>
     </div>

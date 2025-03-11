@@ -21,7 +21,7 @@ const Contact = () => {
 
             <div className="flex items-center gap-6 py-4">
               <a
-                href="https://github.com"
+                href="https://github.com/nagavaishak"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full hover:bg-secondary transition-colors"
@@ -30,7 +30,7 @@ const Contact = () => {
                 <Github size={24} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/naga-vaishak-a322b2204/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full hover:bg-secondary transition-colors"
@@ -39,7 +39,7 @@ const Contact = () => {
                 <Linkedin size={24} />
               </a>
               <a
-                href="mailto:contact@example.com"
+                href="mailto:nagavaishak@gmail.com"
                 className="p-2 rounded-full hover:bg-secondary transition-colors"
                 aria-label="Email"
               >
