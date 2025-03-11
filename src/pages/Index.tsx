@@ -83,21 +83,21 @@ const Index = () => {
           </AnimatedSection>
         </section>
 
-        {/* Latest Posts Section */}
+        {/* Latest Case Studies Section */}
         <section className="py-20">
           <AnimatedSection className="space-y-8">
             <div className="flex items-center justify-between">
-              <h2 className="text-2xl font-medium">Latest Posts</h2>
+              <h2 className="text-2xl font-medium">Latest Case Studies</h2>
               <Link
-                to="/blog"
+                to="/case-studies"
                 className="group inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
               >
-                View All Posts
+                View All Case Studies
                 <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
             <div className="space-y-8">
-              {/* Blog posts will go here when we implement the blog page */}
+              {/* Case study cards will go here */}
             </div>
           </AnimatedSection>
         </section>
