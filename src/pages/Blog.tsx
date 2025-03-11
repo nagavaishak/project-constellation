@@ -9,7 +9,7 @@ const posts: BlogPostType[] = [
   {
     id: '1',
     title: 'Understanding Modern Web Development',
-    excerpt: 'An in-depth look at the current state of web development and where it's heading.',
+    excerpt: 'An in-depth look at the current state of web development and where it\'s heading.',
     date: '2024-02-20',
     readTime: '5 min',
     category: 'Web Development',
