@@ -53,13 +53,13 @@ const Index = () => {
               >
                 <Linkedin size={24} />
               </a>
-              <a
-                href="mailto:nagavaishak@gmail.com"
+              <Link
+                to="/contact"
                 className="p-2 rounded-full hover:bg-secondary transition-colors"
-                aria-label="Email"
+                aria-label="Contact me"
               >
                 <Mail size={24} />
-              </a>
+              </Link>
             </div>
           </AnimatedSection>
         </section>

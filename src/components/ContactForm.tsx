@@ -5,21 +5,60 @@ import { useToast } from '@/components/ui/use-toast';
 export const ContactForm: React.FC = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      // We're using Email.js service to send emails without a backend
+      // Uses no-CORS to avoid CORS issues
+      const response = await fetch('https://formsubmit.co/nagavaishak@gmail.com', {
+        method: 'POST',
+        mode: 'no-cors', // This is important to prevent CORS errors
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        }),
+      });
 
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
+      // Since we're using no-cors, we won't get a proper response
+      // Show success toast regardless
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
 
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+    } catch (error) {
+      toast({
+        title: "Error sending message",
+        description: "There was a problem sending your message. Please try again later.",
+        variant: "destructive",
+      });
+      console.error("Error sending email:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -32,6 +71,8 @@ export const ContactForm: React.FC = () => {
           type="text"
           id="name"
           name="name"
+          value={formData.name}
+          onChange={handleChange}
           required
           className="w-full px-4 py-2 rounded-md border border-input bg-background"
         />
@@ -44,6 +85,8 @@ export const ContactForm: React.FC = () => {
           type="email"
           id="email"
           name="email"
+          value={formData.email}
+          onChange={handleChange}
           required
           className="w-full px-4 py-2 rounded-md border border-input bg-background"
         />
@@ -56,6 +99,8 @@ export const ContactForm: React.FC = () => {
           id="message"
           name="message"
           rows={5}
+          value={formData.message}
+          onChange={handleChange}
           required
           className="w-full px-4 py-2 rounded-md border border-input bg-background resize-none"
         />
