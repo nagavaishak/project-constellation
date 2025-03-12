@@ -8,23 +8,23 @@ import { AnimatedSection } from '@/components/AnimatedSection';
 const projects: Project[] = [
   {
     id: '1',
-    title: 'Ethica Labs',
-    description: 'Building ethical and sustainable digital solutions.',
-    tags: ['Sustainability', 'Ethics', 'Technology'],
+    title: 'Censor-Analyzer',
+    description: 'Social Media Censoring using visual sentiment analysis. A dynamic system that identifies and filters inappropriate content in real time on social media platforms.',
+    tags: ['Flutter', 'TensorFlow', 'Firebase', 'Machine Learning'],
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c',
-    githubUrl: 'https://github.com/nagavaishak',
+    githubUrl: 'https://github.com/nagavaishak/censor-analyzer',
     liveUrl: 'https://ethicalabs.netlify.app/',
-    slug: 'ethica-labs',
+    slug: 'censor-analyzer',
   },
   {
     id: '2',
-    title: 'Project Two',
-    description: 'A brief description of project two.',
-    tags: ['React', 'TypeScript', 'Tailwind'],
+    title: 'Ethica Labs',
+    description: 'Building ethical and sustainable digital solutions.',
+    tags: ['Sustainability', 'Ethics', 'Technology'],
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
     githubUrl: 'https://github.com/nagavaishak',
     liveUrl: 'https://example.com',
-    slug: 'project-two',
+    slug: 'ethica-labs',
   },
 ];
 
