@@ -1,12 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { Layout } from '@/components/Layout';
-import { AnimatedSection } from '@/components/AnimatedSection';
-import { Github, Linkedin, Mail } from 'lucide-react';
 
-// Interactive background component
-const InteractiveBackground = () => {
+const InteractiveBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -28,14 +23,9 @@ const InteractiveBackground = () => {
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    // Matrix-like effect settings
-    const fontSize = 14;
-    const columns = Math.floor(canvas.width / fontSize);
-    const drops: number[] = Array(columns).fill(0);
-    
-    // Create nodes for web-like effect
+    // Network nodes settings
     const nodes: { x: number; y: number; vx: number; vy: number; radius: number }[] = [];
-    const nodeCount = 30;
+    const nodeCount = Math.min(50, Math.floor((canvas.width * canvas.height) / 15000));
     
     for (let i = 0; i < nodeCount; i++) {
       nodes.push({
@@ -50,6 +40,7 @@ const InteractiveBackground = () => {
     // Mouse interaction
     let mousePosition = { x: 0, y: 0 };
     let mouseRadius = 100;
+    let isMouseInCanvas = false;
     
     canvas.addEventListener('mousemove', (e) => {
       const rect = canvas.getBoundingClientRect();
@@ -57,12 +48,17 @@ const InteractiveBackground = () => {
         x: e.clientX - rect.left,
         y: e.clientY - rect.top
       };
+      isMouseInCanvas = true;
+    });
+    
+    canvas.addEventListener('mouseout', () => {
+      isMouseInCanvas = false;
     });
 
     // Draw function
     function draw() {
       // Clear the canvas with semi-transparent background for trailing effect
-      ctx.fillStyle = 'rgba(16, 18, 27, 0.1)';
+      ctx.fillStyle = 'rgba(16, 18, 27, 0.03)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
       // Update and draw nodes
@@ -85,14 +81,16 @@ const InteractiveBackground = () => {
         node.y = Math.max(0, Math.min(canvas.height, node.y));
         
         // Mouse repulsion
-        const dx = mousePosition.x - node.x;
-        const dy = mousePosition.y - node.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        if (distance < mouseRadius) {
-          const force = (mouseRadius - distance) / mouseRadius;
-          node.vx -= force * dx / distance * 0.1;
-          node.vy -= force * dy / distance * 0.1;
+        if (isMouseInCanvas) {
+          const dx = mousePosition.x - node.x;
+          const dy = mousePosition.y - node.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < mouseRadius) {
+            const force = (mouseRadius - distance) / mouseRadius;
+            node.vx -= force * dx / distance * 0.1;
+            node.vy -= force * dy / distance * 0.1;
+          }
         }
         
         // Draw the node
@@ -137,57 +135,4 @@ const InteractiveBackground = () => {
   );
 };
 
-const Index = () => {
-  return (
-    <Layout>
-      <div className="container relative">
-        {/* Hero Section with Interactive Background */}
-        <section className="min-h-[90vh] flex flex-col justify-center relative overflow-hidden">
-          <div className="absolute inset-0 -z-10">
-            <InteractiveBackground />
-          </div>
-          <AnimatedSection className="space-y-6 max-w-3xl relative z-10">
-            <span className="text-sm md:text-base text-primary">Hi, my name is</span>
-            <h1 className="text-4xl md:text-6xl font-bold">Naga Vaishak S K</h1>
-            <h2 className="text-3xl md:text-5xl text-muted-foreground font-medium">
-              Cloud engineer & stealthpreneur.
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl">
-              I'm a cloud engineer by profession and stealthpreneur by passion.
-              Currently, I'm working on a venture called Ethica Labs, focusing on building ethical and sustainable digital solutions.
-            </p>
-            <div className="flex items-center gap-4 pt-4">
-              <a
-                href="https://github.com/nagavaishak"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full hover:bg-secondary transition-colors"
-                aria-label="GitHub"
-              >
-                <Github size={24} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/naga-vaishak-a322b2204/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full hover:bg-secondary transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={24} />
-              </a>
-              <Link
-                to="/contact"
-                className="p-2 rounded-full hover:bg-secondary transition-colors"
-                aria-label="Contact me"
-              >
-                <Mail size={24} />
-              </Link>
-            </div>
-          </AnimatedSection>
-        </section>
-      </div>
-    </Layout>
-  );
-};
-
-export default Index;
+export default InteractiveBackground;

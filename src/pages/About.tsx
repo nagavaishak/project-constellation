@@ -4,25 +4,21 @@ import { Layout } from '@/components/Layout';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Mail, FileText, ArrowRight } from 'lucide-react';
+import { Mail, FileText, ArrowRight, MapPin, Headphones, BookOpen, Sparkles } from 'lucide-react';
 
 const About = () => {
   return (
     <Layout>
       <div className="container py-20">
         <AnimatedSection className="space-y-12">
+          {/* Profile Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl font-bold">About Me</h1>
               <p className="text-lg text-muted-foreground">
                 I'm Naga Vaishak S K, a cloud engineer with a passion for building ethical and sustainable digital solutions. 
-                With expertise in cloud infrastructure, machine learning, and mobile app development, I strive to create 
-                technology that makes a positive impact.
-              </p>
-              <p className="text-lg text-muted-foreground">
                 As the founder of Ethica Labs, I'm focused on developing solutions that balance innovation with 
-                ethical considerations. My work spans from AI-driven content moderation to healthcare applications 
-                and blockchain implementations.
+                ethical considerations.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 <Button asChild>
@@ -49,37 +45,140 @@ const About = () => {
             </div>
           </div>
           
+          {/* Education & Work Section */}
           <AnimatedSection delay={0.2} className="space-y-6 pt-12">
-            <h2 className="text-2xl font-bold">Skills & Expertise</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              <div className="bg-card p-4 rounded-lg shadow">
-                <h3 className="font-semibold mb-2">Cloud Engineering</h3>
-                <p className="text-sm text-muted-foreground">AWS, Azure, GCP, Kubernetes, Docker</p>
+            <h2 className="text-2xl font-bold">Education & Work</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-card p-6 rounded-lg shadow-md border border-border hover-card">
+                <div className="flex flex-col h-full">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-primary/10 p-3 rounded-full mr-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg">CMR Institute of Technology</h3>
+                      <p className="text-muted-foreground text-sm">Bachelor's Degree</p>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground">I studied at CMR Institute of Technology where I developed my technical foundation in computer science and engineering.</p>
+                </div>
               </div>
-              <div className="bg-card p-4 rounded-lg shadow">
-                <h3 className="font-semibold mb-2">Software Development</h3>
-                <p className="text-sm text-muted-foreground">Flutter, React, Java, Python, Dart</p>
-              </div>
-              <div className="bg-card p-4 rounded-lg shadow">
-                <h3 className="font-semibold mb-2">Machine Learning</h3>
-                <p className="text-sm text-muted-foreground">TensorFlow, PyTorch, Computer Vision</p>
-              </div>
-              <div className="bg-card p-4 rounded-lg shadow">
-                <h3 className="font-semibold mb-2">Blockchain</h3>
-                <p className="text-sm text-muted-foreground">Smart Contracts, DApps, Web3</p>
-              </div>
-              <div className="bg-card p-4 rounded-lg shadow">
-                <h3 className="font-semibold mb-2">DevOps</h3>
-                <p className="text-sm text-muted-foreground">CI/CD, Infrastructure as Code, GitOps</p>
-              </div>
-              <div className="bg-card p-4 rounded-lg shadow">
-                <h3 className="font-semibold mb-2">Project Management</h3>
-                <p className="text-sm text-muted-foreground">Agile, Scrum, Tech Leadership</p>
+              
+              <div className="bg-card p-6 rounded-lg shadow-md border border-border hover-card">
+                <div className="flex flex-col h-full">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-primary/10 p-3 rounded-full mr-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg">Ellucian</h3>
+                      <p className="text-muted-foreground text-sm">Cloud Engineer</p>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground">Currently working at Ellucian as a Cloud Engineer, designing and implementing scalable cloud solutions.</p>
+                </div>
               </div>
             </div>
           </AnimatedSection>
           
-          <AnimatedSection delay={0.3} className="pt-8">
+          {/* My Skills Section */}
+          <AnimatedSection delay={0.3} className="space-y-6 pt-8">
+            <h2 className="text-2xl font-bold">Key Skills</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="bg-card p-4 rounded-lg shadow">
+                <h3 className="font-semibold mb-2">Cloud Engineering</h3>
+                <p className="text-sm text-muted-foreground">AWS, Azure, GCP, Kubernetes</p>
+              </div>
+              <div className="bg-card p-4 rounded-lg shadow">
+                <h3 className="font-semibold mb-2">Machine Learning</h3>
+                <p className="text-sm text-muted-foreground">TensorFlow, Computer Vision</p>
+              </div>
+              <div className="bg-card p-4 rounded-lg shadow">
+                <h3 className="font-semibold mb-2">Blockchain</h3>
+                <p className="text-sm text-muted-foreground">Smart Contracts, DApps</p>
+              </div>
+              <div className="bg-card p-4 rounded-lg shadow">
+                <h3 className="font-semibold mb-2">Entrepreneurship</h3>
+                <p className="text-sm text-muted-foreground">Startup Strategy, Product Development</p>
+              </div>
+              <div className="bg-card p-4 rounded-lg shadow">
+                <h3 className="font-semibold mb-2">Management</h3>
+                <p className="text-sm text-muted-foreground">Team Leadership, Project Management</p>
+              </div>
+              <div className="bg-card p-4 rounded-lg shadow">
+                <h3 className="font-semibold mb-2">Innovation</h3>
+                <p className="text-sm text-muted-foreground">Design Thinking, Creative Problem Solving</p>
+              </div>
+            </div>
+          </AnimatedSection>
+          
+          {/* Hobbies in Creative Format */}
+          <AnimatedSection delay={0.4} className="pt-12">
+            <h2 className="text-2xl font-bold mb-8">What I Love</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="relative group overflow-hidden rounded-xl aspect-square hover-card">
+                <img 
+                  src="/lovable-uploads/9c371112-78e7-496c-82f3-ee352cf17e1a.png" 
+                  alt="Traveling" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
+                  <div className="flex items-center text-white mb-2">
+                    <MapPin className="mr-2 h-5 w-5" />
+                    <h3 className="text-lg font-semibold">Exploring the World</h3>
+                  </div>
+                  <p className="text-sm text-white/90">Finding new perspectives through travel</p>
+                </div>
+              </div>
+              
+              <div className="relative group overflow-hidden rounded-xl aspect-square hover-card">
+                <img 
+                  src="/lovable-uploads/a827e4f8-d603-40ba-8d91-1ddb9d75e961.png" 
+                  alt="Nature views" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
+                  <div className="flex items-center text-white mb-2">
+                    <Headphones className="mr-2 h-5 w-5" />
+                    <h3 className="text-lg font-semibold">Music & Sound</h3>
+                  </div>
+                  <p className="text-sm text-white/90">Finding rhythm in everyday life</p>
+                </div>
+              </div>
+              
+              <div className="relative group overflow-hidden rounded-xl aspect-square hover-card">
+                <img 
+                  src="/lovable-uploads/0e35e687-4f17-4d0e-9901-a454a5f45dcf.png" 
+                  alt="Lake view" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
+                  <div className="flex items-center text-white mb-2">
+                    <BookOpen className="mr-2 h-5 w-5" />
+                    <h3 className="text-lg font-semibold">History & Culture</h3>
+                  </div>
+                  <p className="text-sm text-white/90">Learning from the past to shape the future</p>
+                </div>
+              </div>
+              
+              <div className="relative group overflow-hidden rounded-xl aspect-square hover-card">
+                <img 
+                  src="/lovable-uploads/190cb59c-107c-41e0-b38b-1db49f44e40c.png" 
+                  alt="Mountain view" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
+                  <div className="flex items-center text-white mb-2">
+                    <Sparkles className="mr-2 h-5 w-5" />
+                    <h3 className="text-lg font-semibold">Exploring Ideas</h3>
+                  </div>
+                  <p className="text-sm text-white/90">Turning curiosity into innovation</p>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+          
+          <AnimatedSection delay={0.5} className="pt-8">
             <div className="bg-muted p-8 rounded-lg">
               <h2 className="text-2xl font-bold mb-4">Want to work together?</h2>
               <p className="text-lg mb-6">I'm always open to discussing new projects, opportunities and collaborations.</p>
