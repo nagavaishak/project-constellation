@@ -5,6 +5,21 @@ import { AnimatedSection } from '@/components/AnimatedSection';
 import { CaseStudyCard, type CaseStudy } from '@/components/CaseStudyCard';
 import { FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
+
+// Sample case studies data
+const caseStudies: CaseStudy[] = [
+  {
+    id: '1',
+    title: 'Cloud Infrastructure Optimization',
+    excerpt: 'How we reduced cloud costs by 40% while improving performance.',
+    date: '2024-02-20',
+    readTime: '8 min',
+    category: 'Cloud Engineering',
+    slug: 'cloud-infrastructure-optimization',
+  },
+  // Add more case studies as needed
+];
 
 // Research papers - under review
 const researchPapers = [
@@ -38,21 +53,14 @@ const researchPapers = [
   }
 ];
 
-// Sample case studies data
-const caseStudies: CaseStudy[] = [
-  {
-    id: '1',
-    title: 'Cloud Infrastructure Optimization',
-    excerpt: 'How we reduced cloud costs by 40% while improving performance.',
-    date: '2024-02-20',
-    readTime: '8 min',
-    category: 'Cloud Engineering',
-    slug: 'cloud-infrastructure-optimization',
-  },
-  // Add more case studies as needed
-];
-
 const CaseStudies = () => {
+  const navigate = useNavigate();
+
+  const handleRequestPaper = (paperTitle: string) => {
+    const encodedMessage = encodeURIComponent(`Request paper - ${paperTitle}`);
+    navigate(`/contact?message=${encodedMessage}`);
+  };
+
   return (
     <Layout>
       <div className="container py-20">
@@ -60,12 +68,24 @@ const CaseStudies = () => {
           <div className="max-w-2xl">
             <h1 className="text-4xl font-bold mb-4">Research & Case Studies</h1>
             <p className="text-muted-foreground">
-              My latest research papers and detailed explorations of technical challenges.
+              I like to dive into diverse topics that intersect technology, ethics, and business innovation.
             </p>
           </div>
           
-          {/* Research Papers Section */}
+          {/* Case Studies Section */}
           <div className="mt-12">
+            <h2 className="text-2xl font-medium mb-6">Case Studies</h2>
+            <div className="max-w-3xl">
+              {caseStudies.map((study) => (
+                <AnimatedSection key={study.id} delay={0.1}>
+                  <CaseStudyCard study={study} />
+                </AnimatedSection>
+              ))}
+            </div>
+          </div>
+
+          {/* Research Papers Section */}
+          <div className="mt-16">
             <h2 className="text-2xl font-medium mb-6">Research Papers</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {researchPapers.map((paper) => (
@@ -77,25 +97,18 @@ const CaseStudies = () => {
                       </div>
                       <h3 className="text-lg font-medium mb-4">{paper.title}</h3>
                       <div className="mt-auto">
-                        <Button variant="outline" size="sm" className="gap-1 mt-2">
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          className="gap-1 mt-2"
+                          onClick={() => handleRequestPaper(paper.title)}
+                        >
                           <FileText size={14} /> 
                           Request Paper
                         </Button>
                       </div>
                     </div>
                   </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-
-          {/* Case Studies Section */}
-          <div className="mt-16">
-            <h2 className="text-2xl font-medium mb-6">Case Studies</h2>
-            <div className="max-w-3xl">
-              {caseStudies.map((study) => (
-                <AnimatedSection key={study.id} delay={0.1}>
-                  <CaseStudyCard study={study} />
                 </AnimatedSection>
               ))}
             </div>

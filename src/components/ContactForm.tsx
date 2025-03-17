@@ -1,15 +1,30 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useToast } from '@/components/ui/use-toast';
+import { useLocation } from 'react-router-dom';
 
 export const ContactForm: React.FC = () => {
   const { toast } = useToast();
+  const location = useLocation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
+
+  useEffect(() => {
+    // Check for message parameter in URL
+    const queryParams = new URLSearchParams(location.search);
+    const messageParam = queryParams.get('message');
+    
+    if (messageParam) {
+      setFormData(prev => ({
+        ...prev,
+        message: decodeURIComponent(messageParam)
+      }));
+    }
+  }, [location.search]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
