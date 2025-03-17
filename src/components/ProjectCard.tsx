@@ -13,6 +13,7 @@ export type Project = {
   githubUrl?: string;
   liveUrl?: string;
   slug: string;
+  content?: string;
 };
 
 type ProjectCardProps = {
@@ -32,6 +33,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = '/placeholder.svg';
+          }}
         />
       </div>
       <div className="p-4">
