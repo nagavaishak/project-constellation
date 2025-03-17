@@ -46,8 +46,8 @@ export const Navbar: React.FC = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        <Link to="/" className="text-xl font-medium">
-          Portfolio
+        <Link to="/" className="text-xl font-medium font-serif">
+          <span className="text-2xl font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>नागवैशाक्</span>
         </Link>
 
         {/* Desktop Navigation */}

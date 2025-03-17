@@ -11,9 +11,9 @@ const projects: Project[] = [
     title: 'Censor-Analyzer',
     description: 'Social Media Censoring using visual sentiment analysis. A dynamic system that identifies and filters inappropriate content in real time on social media platforms.',
     tags: ['Flutter', 'TensorFlow', 'Firebase', 'Machine Learning'],
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c',
+    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04c',
     githubUrl: 'https://github.com/nagavaishak/censor-analyzer',
-    liveUrl: 'https://ethicalabs.netlify.app/',
+    liveUrl: '',
     slug: 'censor-analyzer',
   },
   {
@@ -41,9 +41,9 @@ const projects: Project[] = [
     title: 'Ethica Labs',
     description: 'Building ethical and sustainable digital solutions.',
     tags: ['Sustainability', 'Ethics', 'Technology'],
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
+    image: '/lovable-uploads/b477833e-82dc-463d-9bc8-b0b4d9036a76.png',
     githubUrl: 'https://github.com/nagavaishak',
-    liveUrl: 'https://example.com',
+    liveUrl: 'https://ethicalabs.netlify.app/',
     slug: 'ethica-labs',
   },
 ];

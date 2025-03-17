@@ -11,12 +11,12 @@ import { useNavigate } from 'react-router-dom';
 const caseStudies: CaseStudy[] = [
   {
     id: '1',
-    title: 'Cloud Infrastructure Optimization',
-    excerpt: 'How we reduced cloud costs by 40% while improving performance.',
-    date: '2024-02-20',
-    readTime: '8 min',
-    category: 'Cloud Engineering',
-    slug: 'cloud-infrastructure-optimization',
+    title: 'Quantum-Resistant Digital Evidence Validation: A Novel Framework for Post-Quantum Forensic Chain of Custody',
+    excerpt: 'A framework for ensuring digital evidence remains secure against quantum computing attacks.',
+    date: '2024-04-15',
+    readTime: '10 min',
+    category: 'Cybersecurity',
+    slug: 'quantum-resistant-digital-evidence',
   },
   // Add more case studies as needed
 ];
@@ -32,20 +32,13 @@ const researchPapers = [
   },
   {
     id: 2,
-    title: 'Quantum-Resistant Digital Evidence Validation: A Novel Framework for Post-Quantum Forensic Chain of Custody',
-    journal: 'IEEE',
-    status: 'Under Review',
-    color: 'bg-[#E5DEFF]'
-  },
-  {
-    id: 3,
     title: 'Failure as a Service: How Businesses Monetize Customer Dissatisfaction',
     journal: 'Strategic Management Journal',
     status: 'Under Review',
     color: 'bg-[#FFDEE2]'
   },
   {
-    id: 4,
+    id: 3,
     title: 'The Psychology of Digital Hoarding: How Unlimited Cloud Storage is Changing Consumer Behaviour',
     journal: 'SSRN',
     status: 'Under Review',

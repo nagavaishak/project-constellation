@@ -26,7 +26,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       transition={{ duration: 0.3 }}
       className="group relative rounded-lg overflow-hidden border border-border bg-card hover:shadow-lg transition-all duration-300"
     >
-      <div className="aspect-video w-full overflow-hidden bg-muted">
+      <div className="aspect-[4/3] w-full overflow-hidden bg-muted">
         <img
           src={project.image}
           alt={project.title}
@@ -34,28 +34,28 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           loading="lazy"
         />
       </div>
-      <div className="p-6">
-        <div className="flex flex-wrap gap-2 mb-3">
+      <div className="p-4">
+        <div className="flex flex-wrap gap-1.5 mb-2">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="inline-block px-2 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded-md"
+              className="inline-block px-1.5 py-0.5 text-xs font-medium bg-secondary text-secondary-foreground rounded-md"
             >
               {tag}
             </span>
           ))}
         </div>
-        <h3 className="text-xl font-medium mb-2">{project.title}</h3>
-        <p className="text-muted-foreground mb-4">{project.description}</p>
+        <h3 className="text-lg font-medium mb-1">{project.title}</h3>
+        <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{project.description}</p>
         <div className="flex items-center justify-between">
           <Link
             to={`/projects/${project.slug}`}
-            className="text-sm font-medium group inline-flex items-center gap-1 link-underline"
+            className="text-xs font-medium group inline-flex items-center gap-1 link-underline"
           >
             View Details
-            <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
@@ -64,7 +64,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 aria-label="GitHub Repository"
               >
-                <Github size={18} />
+                <Github size={16} />
               </a>
             )}
             {project.liveUrl && (
@@ -75,7 +75,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 aria-label="Live Demo"
               >
-                <ExternalLink size={18} />
+                <ExternalLink size={16} />
               </a>
             )}
           </div>
