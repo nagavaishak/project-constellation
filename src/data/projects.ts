@@ -1,4 +1,3 @@
-
 import { ProjectProps } from '@/types/project';
 
 export const projects: ProjectProps[] = [

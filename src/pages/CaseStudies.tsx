@@ -70,48 +70,44 @@ const CaseStudies = () => {
             </p>
           </div>
           
-          {/* Research Papers Section */}
-          <div className="mt-12">
-            <h2 className="text-2xl font-medium mb-6">Research Papers</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {researchPapers.map((paper) => (
-                <AnimatedSection key={paper.id} delay={0.1} className="h-full">
-                  <div className={`${paper.color} rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] h-full`}>
-                    <div className="flex flex-col h-full">
-                      <div className="text-xs uppercase tracking-wider font-medium mb-2 text-muted-foreground">
-                        {paper.journal} · {paper.status}
-                      </div>
-                      <h3 className="text-lg font-medium mb-4">{paper.title}</h3>
-                      <div className="mt-auto">
-                        <Button 
-                          variant="outline" 
-                          size="sm" 
-                          className="gap-1 mt-2"
-                          onClick={() => handleRequestPaper(paper.title)}
-                        >
-                          <FileText size={14} /> 
-                          Request Paper
-                        </Button>
-                      </div>
-                    </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            {/* Quantum paper with proper styling */}
+            <AnimatedSection delay={0.1} className="h-full">
+              <div className={`bg-[#E5DEFF] rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] h-full`}>
+                <div className="flex flex-col h-full">
+                  <div className="text-xs uppercase tracking-wider font-medium mb-2 text-muted-foreground">
+                    Digital Forensics Journal · Published
                   </div>
-                </AnimatedSection>
-              ))}
-              
-              {/* Add Quantum paper with proper styling */}
-              <AnimatedSection delay={0.1} className="h-full">
-                <div className={`bg-[#E5DEFF] rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] h-full`}>
+                  <h3 className="text-lg font-medium mb-4">{caseStudies[0].title}</h3>
+                  <div className="mt-auto">
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="gap-1 mt-2"
+                      onClick={() => handleRequestPaper(caseStudies[0].title)}
+                    >
+                      <FileText size={14} /> 
+                      Request Paper
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+            
+            {researchPapers.map((paper) => (
+              <AnimatedSection key={paper.id} delay={0.1} className="h-full">
+                <div className={`${paper.color} rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] h-full`}>
                   <div className="flex flex-col h-full">
                     <div className="text-xs uppercase tracking-wider font-medium mb-2 text-muted-foreground">
-                      Digital Forensics Journal · Published
+                      {paper.journal} · {paper.status}
                     </div>
-                    <h3 className="text-lg font-medium mb-4">{caseStudies[0].title}</h3>
+                    <h3 className="text-lg font-medium mb-4">{paper.title}</h3>
                     <div className="mt-auto">
                       <Button 
                         variant="outline" 
                         size="sm" 
                         className="gap-1 mt-2"
-                        onClick={() => handleRequestPaper(caseStudies[0].title)}
+                        onClick={() => handleRequestPaper(paper.title)}
                       >
                         <FileText size={14} /> 
                         Request Paper
@@ -120,16 +116,7 @@ const CaseStudies = () => {
                   </div>
                 </div>
               </AnimatedSection>
-            </div>
-          </div>
-
-          {/* Case Studies Section */}
-          <div className="mt-16">
-            <h2 className="text-2xl font-medium mb-6">Case Studies</h2>
-            <div className="max-w-3xl">
-              {/* No case studies currently shown as we moved Quantum to research papers */}
-              <p className="text-muted-foreground">More case studies coming soon. Check back later!</p>
-            </div>
+            ))}
           </div>
         </AnimatedSection>
       </div>
