@@ -54,6 +54,11 @@ const CaseStudies = () => {
     navigate(`/contact?message=${encodedMessage}`);
   };
 
+  const handleReadCaseStudy = (studyTitle: string) => {
+    const encodedMessage = encodeURIComponent(`Read case study - ${studyTitle}`);
+    navigate(`/contact?message=${encodedMessage}`);
+  };
+
   return (
     <Layout>
       <div className="container py-20">
@@ -65,20 +70,8 @@ const CaseStudies = () => {
             </p>
           </div>
           
-          {/* Case Studies Section */}
-          <div className="mt-12">
-            <h2 className="text-2xl font-medium mb-6">Case Studies</h2>
-            <div className="max-w-3xl">
-              {caseStudies.map((study) => (
-                <AnimatedSection key={study.id} delay={0.1}>
-                  <CaseStudyCard study={study} />
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-
           {/* Research Papers Section */}
-          <div className="mt-16">
+          <div className="mt-12">
             <h2 className="text-2xl font-medium mb-6">Research Papers</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {researchPapers.map((paper) => (
@@ -104,6 +97,38 @@ const CaseStudies = () => {
                   </div>
                 </AnimatedSection>
               ))}
+              
+              {/* Add Quantum paper with same styling */}
+              <AnimatedSection delay={0.1} className="h-full">
+                <div className={`bg-[#E5DEFF] rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] h-full`}>
+                  <div className="flex flex-col h-full">
+                    <div className="text-xs uppercase tracking-wider font-medium mb-2 text-muted-foreground">
+                      Digital Forensics Journal · Published
+                    </div>
+                    <h3 className="text-lg font-medium mb-4">{caseStudies[0].title}</h3>
+                    <div className="mt-auto">
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="gap-1 mt-2"
+                        onClick={() => handleReadCaseStudy(caseStudies[0].title)}
+                      >
+                        <FileText size={14} /> 
+                        Read Paper
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
+
+          {/* Case Studies Section */}
+          <div className="mt-16">
+            <h2 className="text-2xl font-medium mb-6">Case Studies</h2>
+            <div className="max-w-3xl">
+              {/* No case studies currently shown as we moved Quantum to research papers */}
+              <p className="text-muted-foreground">More case studies coming soon. Check back later!</p>
             </div>
           </div>
         </AnimatedSection>

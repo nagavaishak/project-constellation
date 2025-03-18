@@ -1,13 +1,13 @@
 
-import { Project } from '@/components/ProjectCard';
+import { ProjectProps } from '@/types/project';
 
-export const projects: Project[] = [
+export const projects: ProjectProps[] = [
   {
     id: '1',
     title: 'Censor-Analyzer',
     description: 'Social Media Censoring using visual sentiment analysis. A dynamic system that identifies and filters inappropriate content in real time on social media platforms.',
     tags: ['Flutter', 'TensorFlow', 'Firebase', 'Machine Learning'],
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1560472355-536de3962603',
     githubUrl: 'https://github.com/nagavaishak/censor-analyzer',
     slug: 'censor-analyzer',
     content: `

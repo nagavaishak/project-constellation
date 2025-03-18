@@ -32,7 +32,8 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { to: '/', label: 'Home' },
     { to: '/projects', label: 'Projects' },
-    { to: '/case-studies', label: 'Case Studies' },
+    { to: '/case-studies', label: 'Research' },
+    { to: '/blog', label: 'Blog' },
     { to: '/about', label: 'About' },
     { to: '/contact', label: 'Contact' },
   ];
@@ -46,8 +47,8 @@ export const Navbar: React.FC = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        <Link to="/" className="text-xl font-medium font-serif">
-          <span className="text-2xl font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>नागवैशाक्</span>
+        <Link to="/" className="text-xl font-medium flex items-center">
+          <img src="/logo.svg" alt="Naga Vaishak" className="h-8 w-auto mr-2" />
         </Link>
 
         {/* Desktop Navigation */}

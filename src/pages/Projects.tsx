@@ -8,7 +8,7 @@ import { projects } from '@/data/projects';
 const Projects = () => {
   return (
     <Layout>
-      <div className="container py-20">
+      <div className="container py-16">
         <AnimatedSection className="space-y-8">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-bold mb-4">Projects</h1>
@@ -16,7 +16,7 @@ const Projects = () => {
               A collection of projects I've worked on. Each project is unique and showcases different skills and technologies.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-8">
             {projects.map((project) => (
               <AnimatedSection key={project.id} delay={0.1}>
                 <ProjectCard project={project} />

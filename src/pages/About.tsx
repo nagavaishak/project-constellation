@@ -4,7 +4,48 @@ import { Layout } from '@/components/Layout';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Mail, FileText, ArrowRight, MapPin, Headphones, BookOpen, Sparkles } from 'lucide-react';
+import { 
+  Mail, 
+  FileText, 
+  ArrowRight, 
+  MapPin, 
+  Headphones, 
+  BookOpen, 
+  Sparkles,
+  Award,
+  CheckCircle2
+} from 'lucide-react';
+import { 
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
+} from '@/components/ui/card';
+
+const certifications = [
+  {
+    id: 1,
+    name: "Advanced Program in Product Development and Management",
+    issuer: "Udemy",
+    skills: ["Project Management"],
+    icon: "product"
+  },
+  {
+    id: 2,
+    name: "AWS Certified Solutions Architect – Associate",
+    issuer: "Amazon Web Services (AWS)",
+    skills: ["Cloud Architecture", "AWS Services"],
+    icon: "aws"
+  },
+  {
+    id: 3,
+    name: "Cloud Platform Job Simulation",
+    issuer: "Forage Verizon",
+    skills: ["Cloud Computing", "Infrastructure Management"],
+    icon: "cloud"
+  }
+];
 
 const About = () => {
   return (
@@ -44,6 +85,36 @@ const About = () => {
               <div className="absolute -z-10 -bottom-6 -right-6 w-full h-full bg-primary/10 rounded-lg"></div>
             </div>
           </div>
+          
+          {/* Certifications Section */}
+          <AnimatedSection delay={0.15} className="space-y-6 pt-8">
+            <h2 className="text-2xl font-bold">Certifications</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {certifications.map((cert) => (
+                <Card key={cert.id} className="hover-card">
+                  <CardHeader className="pb-2">
+                    <div className="flex items-center mb-2">
+                      <div className="bg-primary/10 p-2.5 rounded-full mr-3">
+                        <Award className="h-5 w-5 text-primary" />
+                      </div>
+                      <CardTitle className="text-lg">{cert.name}</CardTitle>
+                    </div>
+                    <CardDescription>Issued by {cert.issuer}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {cert.skills.map((skill, index) => (
+                        <div key={index} className="flex items-center text-xs bg-secondary px-2 py-1 rounded-full">
+                          <CheckCircle2 className="h-3 w-3 mr-1 text-primary" />
+                          {skill}
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </AnimatedSection>
           
           {/* Education & Work Section */}
           <AnimatedSection delay={0.2} className="space-y-6 pt-12">

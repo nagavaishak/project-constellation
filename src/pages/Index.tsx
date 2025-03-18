@@ -15,7 +15,7 @@ const Index = () => {
             <span className="text-sm md:text-base text-primary">Hi, my name is</span>
             <h1 className="text-4xl md:text-6xl font-bold">Naga Vaishak S K</h1>
             <h2 className="text-3xl md:text-5xl text-muted-foreground font-medium">
-              Cloud engineer & stealthpreneur.
+              Cloud engineer, aspiring management professional & stealthpreneur.
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl">
               I'm a cloud engineer by profession and stealthpreneur by passion.
