@@ -98,7 +98,7 @@ const CaseStudies = () => {
                 </AnimatedSection>
               ))}
               
-              {/* Add Quantum paper with same styling */}
+              {/* Add Quantum paper with proper styling */}
               <AnimatedSection delay={0.1} className="h-full">
                 <div className={`bg-[#E5DEFF] rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] h-full`}>
                   <div className="flex flex-col h-full">
@@ -111,10 +111,10 @@ const CaseStudies = () => {
                         variant="outline" 
                         size="sm" 
                         className="gap-1 mt-2"
-                        onClick={() => handleReadCaseStudy(caseStudies[0].title)}
+                        onClick={() => handleRequestPaper(caseStudies[0].title)}
                       >
                         <FileText size={14} /> 
-                        Read Paper
+                        Request Paper
                       </Button>
                     </div>
                   </div>

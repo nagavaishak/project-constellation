@@ -13,7 +13,9 @@ import {
   BookOpen, 
   Sparkles,
   Award,
-  CheckCircle2
+  CheckCircle2,
+  MessageSquare,
+  Heart
 } from 'lucide-react';
 import { 
   Card,
@@ -45,6 +47,13 @@ const certifications = [
     skills: ["Cloud Computing", "Infrastructure Management"],
     icon: "cloud"
   }
+];
+
+const languages = [
+  { name: "English", proficiency: "Professional" },
+  { name: "Kannada", proficiency: "Native" },
+  { name: "Hindi", proficiency: "Professional" },
+  { name: "Telugu", proficiency: "Conversational" }
 ];
 
 const About = () => {
@@ -86,38 +95,8 @@ const About = () => {
             </div>
           </div>
           
-          {/* Certifications Section */}
-          <AnimatedSection delay={0.15} className="space-y-6 pt-8">
-            <h2 className="text-2xl font-bold">Certifications</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {certifications.map((cert) => (
-                <Card key={cert.id} className="hover-card">
-                  <CardHeader className="pb-2">
-                    <div className="flex items-center mb-2">
-                      <div className="bg-primary/10 p-2.5 rounded-full mr-3">
-                        <Award className="h-5 w-5 text-primary" />
-                      </div>
-                      <CardTitle className="text-lg">{cert.name}</CardTitle>
-                    </div>
-                    <CardDescription>Issued by {cert.issuer}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      {cert.skills.map((skill, index) => (
-                        <div key={index} className="flex items-center text-xs bg-secondary px-2 py-1 rounded-full">
-                          <CheckCircle2 className="h-3 w-3 mr-1 text-primary" />
-                          {skill}
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </AnimatedSection>
-          
           {/* Education & Work Section */}
-          <AnimatedSection delay={0.2} className="space-y-6 pt-12">
+          <AnimatedSection delay={0.1} className="space-y-6 pt-12">
             <h2 className="text-2xl font-bold">Education & Work</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-card p-6 rounded-lg shadow-md border border-border hover-card">
@@ -153,7 +132,7 @@ const About = () => {
           </AnimatedSection>
           
           {/* My Skills Section */}
-          <AnimatedSection delay={0.3} className="space-y-6 pt-8">
+          <AnimatedSection delay={0.2} className="space-y-6 pt-8">
             <h2 className="text-2xl font-bold">Key Skills</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               <div className="bg-card p-4 rounded-lg shadow">
@@ -183,8 +162,76 @@ const About = () => {
             </div>
           </AnimatedSection>
           
+          {/* Certifications Section */}
+          <AnimatedSection delay={0.3} className="space-y-6 pt-8">
+            <h2 className="text-2xl font-bold">Certifications</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {certifications.map((cert) => (
+                <Card key={cert.id} className="hover-card">
+                  <CardHeader className="pb-2">
+                    <div className="flex items-center mb-2">
+                      <div className="bg-primary/10 p-2.5 rounded-full mr-3">
+                        <Award className="h-5 w-5 text-primary" />
+                      </div>
+                      <CardTitle className="text-lg">{cert.name}</CardTitle>
+                    </div>
+                    <CardDescription>Issued by {cert.issuer}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {cert.skills.map((skill, index) => (
+                        <div key={index} className="flex items-center text-xs bg-secondary px-2 py-1 rounded-full">
+                          <CheckCircle2 className="h-3 w-3 mr-1 text-primary" />
+                          {skill}
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </AnimatedSection>
+          
+          {/* Languages Section */}
+          <AnimatedSection delay={0.4} className="space-y-6 pt-8">
+            <h2 className="text-2xl font-bold">Languages</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              {languages.map((language, index) => (
+                <div key={index} className="bg-card p-5 rounded-lg shadow border border-border hover:border-primary/20 transition-colors">
+                  <div className="flex items-center mb-2">
+                    <div className="bg-primary/10 p-2 rounded-full mr-3">
+                      <MessageSquare className="h-4 w-4 text-primary" />
+                    </div>
+                    <h3 className="font-semibold">{language.name}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{language.proficiency} Proficiency</p>
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
+          
+          {/* Philanthropy Section */}
+          <AnimatedSection delay={0.5} className="space-y-6 pt-8">
+            <h2 className="text-2xl font-bold">Philanthropy</h2>
+            <div className="bg-card p-6 rounded-lg shadow-md border border-border">
+              <div className="flex items-start">
+                <div className="bg-primary/10 p-3 rounded-full mr-4 mt-1">
+                  <Heart className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Arya Vysya Sangha</h3>
+                  <p className="text-muted-foreground">
+                    Volunteered with Arya Vysya Sangha, helping the needy by providing basic facilities, 
+                    education support, and emergency aid. Participated in community development 
+                    initiatives focused on sustainable assistance programs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+          
           {/* Hobbies in Creative Format */}
-          <AnimatedSection delay={0.4} className="pt-12">
+          <AnimatedSection delay={0.6} className="pt-12">
             <h2 className="text-2xl font-bold mb-8">What I Love</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="relative group overflow-hidden rounded-xl aspect-square hover-card">
@@ -249,7 +296,7 @@ const About = () => {
             </div>
           </AnimatedSection>
           
-          <AnimatedSection delay={0.5} className="pt-8">
+          <AnimatedSection delay={0.7} className="pt-8">
             <div className="bg-muted p-8 rounded-lg">
               <h2 className="text-2xl font-bold mb-4">Want to work together?</h2>
               <p className="text-lg mb-6">I'm always open to discussing new projects, opportunities and collaborations.</p>
