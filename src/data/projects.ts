@@ -3,51 +3,11 @@ import { ProjectProps } from '@/types/project';
 
 export const projects: ProjectProps[] = [
   {
-    id: '4',
-    title: 'Ethica Labs',
-    description: 'Building ethical and sustainable digital solutions.',
-    tags: ['Sustainability', 'Ethics', 'Technology'],
-    image: '/lovable-uploads/a9e081ab-bd8b-43ee-a980-22ffac630352.png',
-    githubUrl: 'https://github.com/nagavaishak',
-    liveUrl: 'https://ethicalabs.netlify.app/',
-    slug: 'ethica-labs',
-    content: `
-# Ethica Lab: Advancing Ethical AI Governance
-
-## Executive Summary
-Artificial intelligence (AI) has become a transformative force across industries, but its rapid advancement raises significant ethical, regulatory, and governance challenges. Ethica Lab is dedicated to ensuring AI is developed and deployed responsibly by providing organizations with the tools, frameworks, and insights necessary to navigate complex AI governance landscapes. This white paper outlines our approach, methodologies, and the value we offer to enterprises and policymakers.
-
-## Introduction
-As AI adoption accelerates, organizations face increasing pressure to comply with regulatory standards, mitigate bias, ensure transparency, and maintain accountability. Without proper governance, AI systems can lead to unintended consequences, including discrimination, privacy violations, and security risks. Ethica Lab aims to bridge this gap by developing AI governance solutions that align with global best practices.
-
-## The Need for AI Governance
-- **Regulatory Compliance** – Governments and regulatory bodies worldwide are introducing AI regulations (e.g., EU AI Act, India's Digital Personal Data Protection Act). Companies must stay ahead of evolving compliance requirements.
-- **Ethical Considerations** – AI must be designed to uphold fairness, avoid bias, and ensure inclusivity.
-- **Security & Privacy** – AI systems process vast amounts of data, requiring robust privacy-preserving mechanisms to safeguard user information.
-- **Trust & Transparency** – Organizations must adopt explainability and transparency measures to build trust in AI systems.
-
-## Ethica Lab's Approach
-Ethica Lab provides a structured framework to help enterprises develop, assess, and monitor AI systems ethically. Our methodology consists of:
-
-- **AI Risk Assessment Framework** – A comprehensive assessment of AI models to identify risks related to bias, transparency, and security.
-- **Compliance Automation** – AI-powered tools that help organizations adhere to AI regulations through automated audits and documentation.
-- **Bias Mitigation & Fairness Tools** – Advanced fairness testing and bias correction mechanisms to ensure non-discriminatory AI.
-- **Explainability & Interpretability Solutions** – Implementing model explainability techniques to improve stakeholder understanding and trust.
-- **Training & Advisory Services** – Workshops, guidelines, and policy recommendations for organizations to establish internal AI governance frameworks.
-
-## Case Study: Ethical AI in Action
-Scenario: A financial institution faced challenges ensuring fair credit scoring using AI. Ethica Lab conducted an AI risk audit, identifying bias in loan approval decisions. By integrating fairness-enhancing algorithms and explainability tools, the institution improved compliance and fairness, reducing bias by 30% while maintaining model accuracy.
-
-## Conclusion
-AI governance is no longer optional—it is a business imperative. Ethica Lab enables organizations to navigate AI's ethical challenges by providing practical solutions for responsible AI development. By partnering with Ethica Lab, enterprises can ensure their AI systems align with global ethical standards while fostering innovation and trust.
-    `
-  },
-  {
     id: '1',
     title: 'Censor-Analyzer',
     description: 'Social Media Censoring using visual sentiment analysis. A dynamic system that identifies and filters inappropriate content in real time on social media platforms.',
     tags: ['Flutter', 'TensorFlow', 'Firebase', 'Machine Learning'],
-    image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
+    image: 'https://images.unsplash.com/photo-1560472355-536de3962603',
     githubUrl: 'https://github.com/nagavaishak/censor-analyzer',
     slug: 'censor-analyzer',
     content: `
@@ -189,6 +149,46 @@ This project is a blockchain-based solution for detecting counterfeit products. 
 
 ## Contribution
 Feel free to contribute by creating a pull request or raising an issue for improvements.
+    `
+  },
+  {
+    id: '4',
+    title: 'Ethica Labs',
+    description: 'Building ethical and sustainable digital solutions.',
+    tags: ['Sustainability', 'Ethics', 'Technology'],
+    image: '/placeholder.svg',
+    githubUrl: 'https://github.com/nagavaishak',
+    liveUrl: 'https://ethicalabs.netlify.app/',
+    slug: 'ethica-labs',
+    content: `
+# Ethica Lab: Advancing Ethical AI Governance
+
+## Executive Summary
+Artificial intelligence (AI) has become a transformative force across industries, but its rapid advancement raises significant ethical, regulatory, and governance challenges. Ethica Lab is dedicated to ensuring AI is developed and deployed responsibly by providing organizations with the tools, frameworks, and insights necessary to navigate complex AI governance landscapes. This white paper outlines our approach, methodologies, and the value we offer to enterprises and policymakers.
+
+## Introduction
+As AI adoption accelerates, organizations face increasing pressure to comply with regulatory standards, mitigate bias, ensure transparency, and maintain accountability. Without proper governance, AI systems can lead to unintended consequences, including discrimination, privacy violations, and security risks. Ethica Lab aims to bridge this gap by developing AI governance solutions that align with global best practices.
+
+## The Need for AI Governance
+- **Regulatory Compliance** – Governments and regulatory bodies worldwide are introducing AI regulations (e.g., EU AI Act, India's Digital Personal Data Protection Act). Companies must stay ahead of evolving compliance requirements.
+- **Ethical Considerations** – AI must be designed to uphold fairness, avoid bias, and ensure inclusivity.
+- **Security & Privacy** – AI systems process vast amounts of data, requiring robust privacy-preserving mechanisms to safeguard user information.
+- **Trust & Transparency** – Organizations must adopt explainability and transparency measures to build trust in AI systems.
+
+## Ethica Lab's Approach
+Ethica Lab provides a structured framework to help enterprises develop, assess, and monitor AI systems ethically. Our methodology consists of:
+
+- **AI Risk Assessment Framework** – A comprehensive assessment of AI models to identify risks related to bias, transparency, and security.
+- **Compliance Automation** – AI-powered tools that help organizations adhere to AI regulations through automated audits and documentation.
+- **Bias Mitigation & Fairness Tools** – Advanced fairness testing and bias correction mechanisms to ensure non-discriminatory AI.
+- **Explainability & Interpretability Solutions** – Implementing model explainability techniques to improve stakeholder understanding and trust.
+- **Training & Advisory Services** – Workshops, guidelines, and policy recommendations for organizations to establish internal AI governance frameworks.
+
+## Case Study: Ethical AI in Action
+Scenario: A financial institution faced challenges ensuring fair credit scoring using AI. Ethica Lab conducted an AI risk audit, identifying bias in loan approval decisions. By integrating fairness-enhancing algorithms and explainability tools, the institution improved compliance and fairness, reducing bias by 30% while maintaining model accuracy.
+
+## Conclusion
+AI governance is no longer optional—it is a business imperative. Ethica Lab enables organizations to navigate AI's ethical challenges by providing practical solutions for responsible AI development. By partnering with Ethica Lab, enterprises can ensure their AI systems align with global ethical standards while fostering innovation and trust.
     `
   },
 ];

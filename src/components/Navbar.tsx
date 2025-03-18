@@ -48,12 +48,7 @@ export const Navbar: React.FC = () => {
     >
       <div className="container flex items-center justify-between">
         <Link to="/" className="text-xl font-medium flex items-center">
-          <div className="flex items-center">
-            <div className="h-8 w-8 flex items-center justify-center bg-primary bg-opacity-10 rounded mr-2 text-primary font-bold">
-              NV
-            </div>
-            <span className="font-medium text-foreground mr-1">नागवैशक्</span>
-          </div>
+          <img src="/logo.svg" alt="Naga Vaishak" className="h-8 w-auto mr-2" />
         </Link>
 
         {/* Desktop Navigation */}
