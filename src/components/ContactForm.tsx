@@ -36,13 +36,12 @@ export const ContactForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // We're using Email.js service to send emails without a backend
-      // Uses no-CORS to avoid CORS issues
-      const response = await fetch('https://formsubmit.co/nagavaishak@gmail.com', {
+      // Using FormSubmit.co service which is more reliable for form submissions
+      const response = await fetch('https://formsubmit.co/ajax/nagavaishak@gmail.com', {
         method: 'POST',
-        mode: 'no-cors', // This is important to prevent CORS errors
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify({
           name: formData.name,
@@ -50,20 +49,24 @@ export const ContactForm: React.FC = () => {
           message: formData.message
         }),
       });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
 
-      // Since we're using no-cors, we won't get a proper response
-      // Show success toast regardless
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
-      });
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+      } else {
+        throw new Error("Form submission failed");
+      }
     } catch (error) {
       toast({
         title: "Error sending message",
