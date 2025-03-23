@@ -6,7 +6,7 @@ export const projects: ProjectProps[] = [
     title: 'Ethica Labs',
     description: 'Building ethical and sustainable digital solutions.',
     tags: ['Sustainability', 'Ethics', 'Technology'],
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5',
+    image: '/lovable-uploads/a9d9677b-42dc-4d48-becb-d5527027e76c.png',
     githubUrl: 'https://github.com/nagavaishak',
     liveUrl: 'https://ethicalabs.netlify.app/',
     slug: 'ethica-labs',
@@ -46,7 +46,7 @@ AI governance is no longer optional—it is a business imperative. Ethica Lab en
     title: 'Censor-Analyzer',
     description: 'Social Media Censoring using visual sentiment analysis. A dynamic system that identifies and filters inappropriate content in real time on social media platforms.',
     tags: ['Flutter', 'TensorFlow', 'Firebase', 'Machine Learning'],
-    image: 'https://images.unsplash.com/photo-1560472355-536de3962603',
+    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
     githubUrl: 'https://github.com/nagavaishak/censor-analyzer',
     slug: 'censor-analyzer',
     content: `
