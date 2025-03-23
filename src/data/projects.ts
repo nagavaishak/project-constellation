@@ -1,3 +1,4 @@
+
 import { ProjectProps } from '@/types/project';
 
 export const projects: ProjectProps[] = [
@@ -6,7 +7,7 @@ export const projects: ProjectProps[] = [
     title: 'Ethica Labs',
     description: 'Building ethical and sustainable digital solutions.',
     tags: ['Sustainability', 'Ethics', 'Technology'],
-    image: '/lovable-uploads/a9d9677b-42dc-4d48-becb-d5527027e76c.png',
+    image: 'https://images.unsplash.com/photo-1527576539890-dfa815648363',
     githubUrl: 'https://github.com/nagavaishak',
     liveUrl: 'https://ethicalabs.netlify.app/',
     slug: 'ethica-labs',
