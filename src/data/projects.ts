@@ -6,7 +6,7 @@ export const projects: ProjectProps[] = [
     title: 'Ethica Labs',
     description: 'Building ethical and sustainable digital solutions.',
     tags: ['Sustainability', 'Ethics', 'Technology'],
-    image: '/lovable-uploads/9c371112-78e7-496c-82f3-ee352cf17e1a.png',
+    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5',
     githubUrl: 'https://github.com/nagavaishak',
     liveUrl: 'https://ethicalabs.netlify.app/',
     slug: 'ethica-labs',
