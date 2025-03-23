@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Github, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { ProjectProps } from '@/types/project';
+import { Badge } from '@/components/ui/badge';
 
 type ProjectCardProps = {
   project: ProjectProps;
@@ -31,17 +32,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <div className="p-4 flex flex-col flex-grow">
         <div className="flex flex-wrap gap-1.5 mb-2">
           {project.tags.slice(0, 3).map((tag) => (
-            <span
+            <Badge
               key={tag}
-              className="inline-block px-1.5 py-0.5 text-xs font-medium bg-secondary text-secondary-foreground rounded-md"
+              variant="outline"
+              className="px-1.5 py-0.5 text-xs font-medium bg-secondary/30"
             >
               {tag}
-            </span>
+            </Badge>
           ))}
           {project.tags.length > 3 && (
-            <span className="inline-block px-1.5 py-0.5 text-xs font-medium bg-muted text-muted-foreground rounded-md">
+            <Badge
+              variant="outline"
+              className="px-1.5 py-0.5 text-xs font-medium bg-muted text-muted-foreground"
+            >
               +{project.tags.length - 3}
-            </span>
+            </Badge>
           )}
         </div>
         <h3 className="text-base font-medium mb-1">{project.title}</h3>
@@ -49,7 +54,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <div className="flex items-center justify-between mt-auto">
           <Link
             to={`/projects/${project.slug}`}
-            className="text-xs font-medium group inline-flex items-center gap-1 link-underline"
+            className="text-xs font-medium group inline-flex items-center gap-1 hover:text-primary transition-colors"
           >
             View Details
             <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />

@@ -3,8 +3,9 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { ProjectProps } from '@/types/project';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Github, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Github, ExternalLink, Calendar, User } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Badge } from '@/components/ui/badge';
 
 type ProjectDetailViewProps = {
   project: ProjectProps;
@@ -29,19 +30,20 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({ project })
         <div className="space-y-4">
           <div className="flex flex-wrap gap-2 mb-2">
             {project.tags.map((tag) => (
-              <span
+              <Badge
                 key={tag}
-                className="inline-block px-2 py-1 text-sm font-medium bg-secondary text-secondary-foreground rounded-md"
+                variant="secondary"
+                className="px-2.5 py-0.5 text-xs font-medium"
               >
                 {tag}
-              </span>
+              </Badge>
             ))}
           </div>
           
           <h1 className="text-3xl md:text-4xl font-bold">{project.title}</h1>
           <p className="text-xl text-muted-foreground">{project.description}</p>
           
-          <div className="flex items-center gap-4 pt-2">
+          <div className="flex items-center flex-wrap gap-4 pt-2">
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
@@ -64,16 +66,30 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({ project })
                 Live Demo
               </a>
             )}
+            
+            {project.date && (
+              <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Calendar size={16} />
+                {project.date}
+              </span>
+            )}
+            
+            {project.client && (
+              <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                <User size={16} />
+                {project.client}
+              </span>
+            )}
           </div>
         </div>
         
         {/* Featured Image */}
         {project.image && (
-          <div className="aspect-video w-full overflow-hidden rounded-lg border border-border bg-muted">
+          <div className="aspect-video w-full overflow-hidden rounded-lg border border-border bg-muted shadow-md">
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition duration-500 hover:scale-105"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.src = '/placeholder.svg';
@@ -87,6 +103,19 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({ project })
           {project.content && (
             <ReactMarkdown>{project.content}</ReactMarkdown>
           )}
+        </div>
+        
+        {/* Related Projects section would go here */}
+        
+        {/* Contact CTA */}
+        <div className="mt-12 bg-muted p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-2">Interested in working together?</h3>
+          <p className="mb-4 text-muted-foreground">Feel free to reach out if you'd like to discuss a similar project or collaboration.</p>
+          <Link to="/contact">
+            <Button>
+              Get in Touch
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

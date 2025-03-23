@@ -9,4 +9,7 @@ export interface ProjectProps {
   liveUrl?: string;
   slug: string;
   content?: string;
+  date?: string;
+  client?: string;
+  featured?: boolean;
 }

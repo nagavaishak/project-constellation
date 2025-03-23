@@ -2,11 +2,16 @@
 import React, { useState, useEffect } from 'react';
 import { useToast } from '@/components/ui/use-toast';
 import { useLocation } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Textarea } from '@/components/ui/textarea';
+import { AlertCircle, Loader2 } from 'lucide-react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 export const ContactForm: React.FC = () => {
   const { toast } = useToast();
   const location = useLocation();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,11 +34,13 @@ export const ContactForm: React.FC = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    setError(null); // Clear error when user makes changes
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
     try {
       // Using FormSubmit.co service which is more reliable for form submissions
@@ -46,7 +53,9 @@ export const ContactForm: React.FC = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          message: formData.message
+          message: formData.message,
+          _subject: `New Contact Form Submission from ${formData.name}`,
+          _template: 'table'
         }),
       });
       
@@ -68,12 +77,13 @@ export const ContactForm: React.FC = () => {
         throw new Error("Form submission failed");
       }
     } catch (error) {
+      console.error("Error sending email:", error);
+      setError("There was a problem sending your message. Please try again later.");
       toast({
         title: "Error sending message",
         description: "There was a problem sending your message. Please try again later.",
         variant: "destructive",
       });
-      console.error("Error sending email:", error);
     } finally {
       setIsSubmitting(false);
     }
@@ -81,6 +91,13 @@ export const ContactForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {error && (
+        <Alert variant="destructive">
+          <AlertCircle className="h-4 w-4" />
+          <AlertDescription>{error}</AlertDescription>
+        </Alert>
+      )}
+      
       <div>
         <label htmlFor="name" className="block text-sm font-medium mb-2">
           Name
@@ -92,9 +109,10 @@ export const ContactForm: React.FC = () => {
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 rounded-md border border-input bg-background"
+          className="w-full px-4 py-2 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
       </div>
+      
       <div>
         <label htmlFor="email" className="block text-sm font-medium mb-2">
           Email
@@ -106,30 +124,37 @@ export const ContactForm: React.FC = () => {
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 rounded-md border border-input bg-background"
+          className="w-full px-4 py-2 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
       </div>
+      
       <div>
         <label htmlFor="message" className="block text-sm font-medium mb-2">
           Message
         </label>
-        <textarea
+        <Textarea
           id="message"
           name="message"
           rows={5}
           value={formData.message}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 rounded-md border border-input bg-background resize-none"
+          className="w-full px-4 py-2 rounded-md border border-input bg-background resize-none focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
       </div>
-      <button
+      
+      <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-primary text-primary-foreground px-4 py-2 rounded-md hover:opacity-90 transition-opacity disabled:opacity-50"
+        className="w-full"
       >
-        {isSubmitting ? 'Sending...' : 'Send Message'}
-      </button>
+        {isSubmitting ? (
+          <>
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            Sending...
+          </>
+        ) : 'Send Message'}
+      </Button>
     </form>
   );
 };
