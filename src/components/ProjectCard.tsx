@@ -52,13 +52,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <h3 className="text-base font-medium mb-1">{project.title}</h3>
         <p className="text-xs text-muted-foreground mb-3 line-clamp-2 flex-grow">{project.description}</p>
         <div className="flex items-center justify-between mt-auto">
-          <Link
-            to={`/projects/${project.slug}`}
-            className="text-xs font-medium group inline-flex items-center gap-1 hover:text-primary transition-colors"
-          >
-            View Details
-            <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
+          {project.title === 'Ethica Labs' ? (
+            <Link
+              to={`/projects/${project.slug}`}
+              className="text-xs font-medium group inline-flex items-center gap-1 hover:text-primary transition-colors"
+            >
+              View Details
+              <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          ) : (
+            <div></div> // Empty div to maintain the flex layout
+          )}
           <div className="flex items-center gap-2">
             {project.githubUrl && (
               <a
