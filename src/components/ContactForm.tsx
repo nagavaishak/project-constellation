@@ -43,25 +43,26 @@ export const ContactForm: React.FC = () => {
     setError(null);
 
     try {
-      // Using FormSubmit.co service which is more reliable for form submissions
-      const response = await fetch('https://formsubmit.co/ajax/nagavaishak@gmail.com', {
+      // Using EmailJS service which is more reliable for form submissions
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          _subject: `New Contact Form Submission from ${formData.name}`,
-          _template: 'table'
+          service_id: 'service_n7hq4ok',
+          template_id: 'template_ylxpewo',
+          user_id: 'Jib6dyTvBBXkelmFW',
+          template_params: {
+            from_name: formData.name,
+            reply_to: formData.email,
+            message: formData.message,
+            to_name: 'Naga Vaishak'
+          }
         }),
       });
       
-      const data = await response.json();
-      
-      if (data.success) {
+      if (response.status === 200) {
         toast({
           title: "Message sent!",
           description: "Thank you for your message. I'll get back to you soon.",

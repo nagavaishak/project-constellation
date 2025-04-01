@@ -3,7 +3,7 @@ import React from 'react';
 import { Layout } from '@/components/Layout';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { CaseStudyCard, type CaseStudy } from '@/components/CaseStudyCard';
-import { FileText } from 'lucide-react';
+import { FileText, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
@@ -42,7 +42,8 @@ const researchPapers = [
     title: 'The Psychology of Digital Hoarding: How Unlimited Cloud Storage is Changing Consumer Behaviour',
     journal: 'SSRN',
     status: 'Under Review',
-    color: 'bg-[#FDE1D3]'
+    color: 'bg-[#FDE1D3]',
+    url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5172811'
   }
 ];
 
@@ -57,6 +58,14 @@ const CaseStudies = () => {
   const handleReadCaseStudy = (studyTitle: string) => {
     const encodedMessage = encodeURIComponent(`Read case study - ${studyTitle}`);
     navigate(`/contact?message=${encodedMessage}`);
+  };
+  
+  const handlePaperAction = (paper: typeof researchPapers[0]) => {
+    if (paper.url) {
+      window.open(paper.url, '_blank');
+    } else {
+      handleRequestPaper(paper.title);
+    }
   };
 
   return (
@@ -84,10 +93,19 @@ const CaseStudies = () => {
                         variant="outline" 
                         size="sm" 
                         className="gap-1 mt-2"
-                        onClick={() => handleRequestPaper(paper.title)}
+                        onClick={() => handlePaperAction(paper)}
                       >
-                        <FileText size={14} /> 
-                        Request Paper
+                        {paper.id === 3 ? (
+                          <>
+                            <ExternalLink size={14} /> 
+                            Read it here
+                          </>
+                        ) : (
+                          <>
+                            <FileText size={14} /> 
+                            Request Paper
+                          </>
+                        )}
                       </Button>
                     </div>
                   </div>
