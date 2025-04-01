@@ -43,26 +43,20 @@ export const ContactForm: React.FC = () => {
     setError(null);
 
     try {
-      // Using EmailJS service which is more reliable for form submissions
-      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      // Using FormSpree which is more reliable for form submissions
+      const response = await fetch('https://formspree.io/f/mgegkpnr', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          service_id: 'service_n7hq4ok',
-          template_id: 'template_ylxpewo',
-          user_id: 'Jib6dyTvBBXkelmFW',
-          template_params: {
-            from_name: formData.name,
-            reply_to: formData.email,
-            message: formData.message,
-            to_name: 'Naga Vaishak'
-          }
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
         }),
       });
       
-      if (response.status === 200) {
+      if (response.ok) {
         toast({
           title: "Message sent!",
           description: "Thank you for your message. I'll get back to you soon.",
