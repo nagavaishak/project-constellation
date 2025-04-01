@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { AlertCircle, Loader2 } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Input } from '@/components/ui/input';
 
 export const ContactForm: React.FC = () => {
   const { toast } = useToast();
@@ -43,16 +44,15 @@ export const ContactForm: React.FC = () => {
     setError(null);
 
     try {
-      // Using EmailJS which is more reliable
       const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          service_id: 'service_rfow87j',
-          template_id: 'template_kd1rh6q',
-          user_id: 'S4FHX2v_QzPLVxBgI',
+          service_id: 'YOUR_SERVICE_ID', // You'll replace this with your actual service ID
+          template_id: 'YOUR_TEMPLATE_ID', // You'll replace this with your actual template ID
+          user_id: 'YOUR_USER_ID', // You'll replace this with your actual user ID
           template_params: {
             from_name: formData.name,
             reply_to: formData.email,
@@ -104,14 +104,14 @@ export const ContactForm: React.FC = () => {
         <label htmlFor="name" className="block text-sm font-medium mb-2">
           Name
         </label>
-        <input
+        <Input
           type="text"
           id="name"
           name="name"
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          className="w-full"
         />
       </div>
       
@@ -119,14 +119,14 @@ export const ContactForm: React.FC = () => {
         <label htmlFor="email" className="block text-sm font-medium mb-2">
           Email
         </label>
-        <input
+        <Input
           type="email"
           id="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          className="w-full"
         />
       </div>
       
@@ -141,7 +141,7 @@ export const ContactForm: React.FC = () => {
           value={formData.message}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 rounded-md border border-input bg-background resize-none focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          className="w-full resize-none"
         />
       </div>
       
