@@ -50,9 +50,9 @@ export const ContactForm: React.FC = () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          service_id: 'YOUR_SERVICE_ID', // You'll replace this with your actual service ID
-          template_id: 'YOUR_TEMPLATE_ID', // You'll replace this with your actual template ID
-          user_id: 'YOUR_USER_ID', // You'll replace this with your actual user ID
+          service_id: 'service_klym343',
+          template_id: 'template_4w5diul',
+          user_id: 'CgClYwlc0np77OhlV',
           template_params: {
             from_name: formData.name,
             reply_to: formData.email,
