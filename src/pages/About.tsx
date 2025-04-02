@@ -13,7 +13,9 @@ import {
   BookOpen, 
   Sparkles,
   Award,
-  CheckCircle2
+  CheckCircle2,
+  Download,
+  ChevronDown
 } from 'lucide-react';
 import { 
   Card,
@@ -22,6 +24,17 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 const certifications = [
   {
@@ -67,11 +80,38 @@ const About = () => {
                     <Mail className="mr-2 h-4 w-4" /> Contact Me
                   </Link>
                 </Button>
-                <Button variant="outline" asChild>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    <FileText className="mr-2 h-4 w-4" /> Resume
-                  </a>
-                </Button>
+                
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button variant="outline" className="group">
+                      <FileText className="mr-2 h-4 w-4 group-hover:animate-pulse" /> 
+                      Download Profile
+                      <ChevronDown className="ml-2 h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-56 p-0 bg-card backdrop-blur-sm border-primary/20">
+                    <div className="grid gap-1 p-2">
+                      <a 
+                        href="https://drive.google.com/drive/folders/1NQTE8T5N7HkQBWD59IcO_De4GVMJVRv1?usp=sharing" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center px-3 py-2 text-sm rounded-md hover:bg-primary/10 transition-colors"
+                      >
+                        <Download className="mr-2 h-4 w-4 text-primary" />
+                        <span>Download CV</span>
+                      </a>
+                      <a 
+                        href="https://drive.google.com/drive/folders/1NQTE8T5N7HkQBWD59IcO_De4GVMJVRv1?usp=sharing" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center px-3 py-2 text-sm rounded-md hover:bg-primary/10 transition-colors"
+                      >
+                        <FileText className="mr-2 h-4 w-4 text-primary" />
+                        <span>Download Resume</span>
+                      </a>
+                    </div>
+                  </PopoverContent>
+                </Popover>
               </div>
             </div>
             <div className="relative">
