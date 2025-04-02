@@ -26,7 +26,7 @@ const researchPapers = [
   {
     id: 1,
     title: 'AI Governance for Hiring: A Multilayered Framework for Ethical, Transparent, and Accountable Recruitment Systems',
-    journal: 'Journal of Business Ethics',
+    journal: 'SSRN',
     status: 'Under Review',
     color: 'bg-[#D3E4FD]'
   },
