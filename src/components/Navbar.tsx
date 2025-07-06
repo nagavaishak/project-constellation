@@ -43,11 +43,11 @@ export const Navbar: React.FC = () => {
   return (
     <header 
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass py-2 shadow-sm' : 'bg-black/20 backdrop-blur-md border-b border-white/10 py-4'
+        scrolled ? 'bg-black/40 backdrop-blur-lg border-b border-white/20 py-2 shadow-lg' : 'bg-black/20 backdrop-blur-md border-b border-white/10 py-4'
       }`}
     >
       <div className="container flex items-center justify-between">
-        <Link to="/" className="text-xl font-medium flex items-center text-white">
+        <Link to="/" className="text-xl font-medium flex items-center text-white font-bold">
           <img src="/logo.svg" alt="Naga Vaishak" className="h-8 w-auto mr-2" />
         </Link>
 
