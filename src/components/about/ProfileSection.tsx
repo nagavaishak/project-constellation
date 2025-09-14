@@ -16,9 +16,7 @@ export const ProfileSection = () => {
       <div className="space-y-6">
         <h1 className="text-4xl font-bold">About Me</h1>
         <p className="text-lg text-muted-foreground">
-          I'm Naga Vaishak S K, a cloud engineer with a passion for building ethical and sustainable digital solutions. 
-          As the founder of Ethica Labs, I'm focused on developing solutions that balance innovation with 
-          ethical considerations.
+          I'm a cloud engineer by profession and stealthpreneur by passion. Currently, I'm working on a venture called Ethica Labs, and pursuing my masters at trinity business school.
         </p>
         <div className="flex flex-wrap gap-4 pt-4">
           <Button asChild>
