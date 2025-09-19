@@ -28,7 +28,8 @@ const researchPapers = [
     title: 'AI Governance for Hiring: A Multilayered Framework for Ethical, Transparent, and Accountable Recruitment Systems',
     journal: 'SSRN',
     status: 'Under Review',
-    color: 'bg-[#D3E4FD]'
+    color: 'bg-[#D3E4FD]',
+    url: 'https://papers.ssrn.com/abstract=5200490'
   },
   {
     id: 2,
@@ -95,7 +96,7 @@ const CaseStudies = () => {
                         className="gap-1 mt-2"
                         onClick={() => handlePaperAction(paper)}
                       >
-                        {paper.id === 3 ? (
+                        {paper.url ? (
                           <>
                             <ExternalLink size={14} /> 
                             Read it here
