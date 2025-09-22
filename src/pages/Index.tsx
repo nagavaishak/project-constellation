@@ -38,7 +38,7 @@ const Index = () => {
               </h2>
               <p className="text-lg text-white/80 max-w-2xl backdrop-blur-sm bg-black/20 p-4 rounded-lg border border-white/10">
                 I'm a cloud engineer by profession and stealthpreneur by passion.
-                Currently, I'm working on a venture called Ethica Labs, focusing on building ethical and sustainable digital solutions.
+                Currently, I'm working on a venture called Ethica Labs, and pursuing my masters at trinity business school.
               </p>
               <div className="flex items-center gap-4 pt-4">
                 <a

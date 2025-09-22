@@ -8,6 +8,7 @@ import React from "react";
 import Index from "./pages/Index";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
+import Clubs from "./pages/Clubs";
 import CaseStudies from "./pages/CaseStudies";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:slug" element={<ProjectDetail />} />
+            <Route path="/clubs" element={<Clubs />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             
             <Route path="/contact" element={<Contact />} />
