@@ -97,25 +97,22 @@ const CaseStudies = () => {
   return (
     <Layout>
       <div className="container py-20">
-        <AnimatedSection className="space-y-8">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl font-bold mb-4">Research & Case Studies</h1>
-            <p className="text-muted-foreground">
-              I like to dive into diverse topics that intersect technology, ethics, and business innovation.
-            </p>
-          </div>
-          
-          {/* Clubs & Societies Section */}
+        {/* Two main sections side by side */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          {/* Clubs Section */}
           <AnimatedSection className="space-y-6">
             <div className="flex items-center gap-3">
               <Users className="w-6 h-6 text-primary" />
-              <h2 className="text-2xl font-bold">Trinity Business School Clubs & Societies</h2>
+              <h1 className="text-3xl font-bold">Clubs & Societies</h1>
             </div>
+            <p className="text-muted-foreground mb-6">
+              Active involvement in Trinity Business School's vibrant community.
+            </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="space-y-4">
               {clubsData.map((club) => (
                 <AnimatedSection key={club.id} delay={0.1} className="h-full">
-                  <div className={`${club.color} rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] h-full border border-border/10`}>
+                  <div className={`${club.color} rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] h-full border border-border/10`}>
                     <div className="flex flex-col h-full">
                       <div className="text-xs uppercase tracking-wider font-medium mb-2 text-muted-foreground">
                         {club.role}
@@ -129,16 +126,21 @@ const CaseStudies = () => {
             </div>
           </AnimatedSection>
           
-          {/* Research Papers Section */}
-          <AnimatedSection className="space-y-6 mt-16">
+          {/* Research Section */}
+          <AnimatedSection className="space-y-6">
             <div className="flex items-center gap-3">
               <FileText className="w-6 h-6 text-primary" />
-              <h2 className="text-2xl font-bold">Research Papers</h2>
+              <h1 className="text-3xl font-bold">Research & Case Studies</h1>
             </div>
-            
+            <p className="text-muted-foreground mb-6">
+              I like to dive into diverse topics that intersect technology, ethics, and business innovation.
+            </p>
           </AnimatedSection>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        </div>
+        
+        {/* Research Papers Grid */}
+        <AnimatedSection className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {researchPapers.map((paper) => (
               <AnimatedSection key={paper.id} delay={0.1} className="h-full">
                 <div className={`${paper.color} rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] h-full`}>
