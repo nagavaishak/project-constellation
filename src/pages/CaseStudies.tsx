@@ -11,12 +11,12 @@ import { useNavigate } from 'react-router-dom';
 const caseStudies: CaseStudy[] = [
   {
     id: '1',
-    title: 'Quantum-Resistant Digital Evidence Validation: A Novel Framework for Post-Quantum Forensic Chain of Custody',
-    excerpt: 'A framework for ensuring digital evidence remains secure against quantum computing attacks.',
+    title: 'Blockchain Defense Against Quantum Computing Threats: Implementing Post-Quantum Cryptography',
+    excerpt: 'Securing blockchain networks against quantum computing vulnerabilities through advanced cryptographic methods.',
     date: '2024-04-15',
-    readTime: '10 min',
-    category: 'Cybersecurity',
-    slug: 'quantum-resistant-digital-evidence',
+    readTime: '12 min',
+    category: 'Blockchain Security',
+    slug: 'blockchain-quantum-defense',
   },
   // Add more case studies as needed
 ];
@@ -30,13 +30,6 @@ const researchPapers = [
     status: 'Under Review',
     color: 'bg-[#D3E4FD]',
     url: 'https://papers.ssrn.com/abstract=5200490'
-  },
-  {
-    id: 2,
-    title: 'Failure as a Service: How Businesses Monetize Customer Dissatisfaction',
-    journal: 'Strategic Management Journal',
-    status: 'Under Review',
-    color: 'bg-[#FFDEE2]'
   },
   {
     id: 3,
@@ -118,9 +111,9 @@ const CaseStudies = () => {
             <AnimatedSection delay={0.1} className="h-full">
               <div className={`bg-[#E5DEFF] rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] h-full`}>
                 <div className="flex flex-col h-full">
-                  <div className="text-xs uppercase tracking-wider font-medium mb-2 text-muted-foreground">
-                    Digital Forensics Journal · Under Review
-                  </div>
+                    <div className="text-xs uppercase tracking-wider font-medium mb-2 text-muted-foreground">
+                      Blockchain Security Journal · Under Review
+                    </div>
                   <h3 className="text-lg font-medium mb-4">{caseStudies[0].title}</h3>
                   <div className="mt-auto">
                     <Button 
