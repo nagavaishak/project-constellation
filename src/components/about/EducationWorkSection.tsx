@@ -14,11 +14,11 @@ export const EducationWorkSection = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
               </div>
               <div>
-                <h3 className="font-semibold text-lg">CMR Institute of Technology</h3>
-                <p className="text-muted-foreground text-sm">Bachelor's Degree</p>
+                <h3 className="font-semibold text-lg">Trinity Business School</h3>
+                <p className="text-muted-foreground text-sm">MSc in Management</p>
               </div>
             </div>
-            <p className="text-muted-foreground">I studied at CMR Institute of Technology where I developed my technical foundation in computer science and engineering.</p>
+            <p className="text-muted-foreground">Currently pursuing my Master's degree in Management at Trinity Business School, focusing on business strategy and innovation.</p>
           </div>
         </div>
         
@@ -29,11 +29,11 @@ export const EducationWorkSection = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Trinity Business School</h3>
-                <p className="text-muted-foreground text-sm">MSc in Management</p>
+                <h3 className="font-semibold text-lg">CMR Institute of Technology</h3>
+                <p className="text-muted-foreground text-sm">Bachelor's Degree</p>
               </div>
             </div>
-            <p className="text-muted-foreground">Currently pursuing my Master's degree in Management at Trinity Business School, focusing on business strategy and innovation.</p>
+            <p className="text-muted-foreground">I studied at CMR Institute of Technology where I developed my technical foundation in computer science and engineering.</p>
           </div>
         </div>
         
