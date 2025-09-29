@@ -34,10 +34,10 @@ const Index = () => {
                 Naga Vaishak S K
               </h1>
               <h2 className="text-3xl md:text-5xl text-white/90 font-medium drop-shadow-xl">
-                Cloud engineer, aspiring management professional & stealthpreneur.
+                Blockchain enthusiast, aspiring management professional & stealthpreneur.
               </h2>
               <p className="text-lg text-white/80 max-w-2xl backdrop-blur-sm bg-black/20 p-4 rounded-lg border border-white/10">
-                I'm a cloud engineer by profession and stealthpreneur by passion.
+                I'm passionate about blockchain and web3 technologies, with a keen interest in decentralized systems and innovation.
                 Currently, I'm working on a venture called Ethica Labs, and pursuing my masters at trinity business school.
               </p>
               <div className="flex items-center gap-4 pt-4">
