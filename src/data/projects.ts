@@ -43,6 +43,91 @@ AI governance is no longer optional—it is a business imperative. Ethica Lab en
     `
   },
   {
+    id: '5',
+    title: 'BELAY',
+    description: 'ML-powered transaction optimization for Solana. Automated retry and parameter optimization achieving 99% success rate for blockchain transactions.',
+    tags: ['Solana', 'TypeScript', 'Machine Learning', 'Blockchain', 'Next.js', 'Web3'],
+    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0',
+    githubUrl: 'https://github.com/nagavaishak/belay',
+    liveUrl: 'https://belaysdk.netlify.app/',
+    slug: 'belay',
+    content: `
+# ⚡ BELAY - Solana's Reliability Layer
+
+## Overview
+BELAY is a TypeScript SDK that provides automated transaction recovery infrastructure for Solana. Built for Colosseum Cypherpunk 2025, it addresses the critical problem of transaction failures that cost the Solana ecosystem $150-200M annually in wasted fees.
+
+## The Problem
+Solana processes 130 million transactions daily, but transaction failures are costly:
+- **36% infrastructure failures** (Blockhash expiration, RPC issues, resource misconfiguration)
+- **$67.80 per user** wasted quarterly on failed transaction fees
+- **15-25% developer time** spent writing custom retry logic
+- **No standardized solution** for transaction reliability
+
+## Four Layers of Reliability
+
+### Layer 1: Multi-RPC Intelligent Routing
+Automatic failover across multiple RPC providers (Helius, Triton, QuickNode).
+- ⚡ 500ms failover detection
+- 🔄 Real-time health monitoring (5-second intervals)
+- 🎯 Routes based on p50 latency and 5-minute success rates
+- ✅ Recovers 50-60% of RPC failures
+
+### Layer 2: Automated Retry with Fresh Blockhash
+Atomic retry mechanism that handles blockhash expiration automatically.
+- 🔁 Detects "Blockhash not found" errors automatically
+- 🆕 Fetches fresh blockhash via getLatestBlockhash() API
+- 🔐 Re-signs transaction with wallet keypair
+- ⏱️ Exponential backoff: 2s → 4s → 8s
+- ✅ Recovers 80% of timing failures
+
+### Layer 3: ML-Based Compute Unit Prediction
+Random Forest regressor trained on 400 real Solana transactions.
+- **Algorithm**: Random Forest Regressor
+- **Performance**: R² = 0.825 (82.5% accuracy)
+- **Features**: instructionCount, accountCount, programId
+- **Training data**: 400 real transactions (Jupiter, Raydium, others)
+- **Inference**: < 200ms latency
+
+### Layer 4: ML-Based Success Probability Prediction
+Random Forest classifier that predicts transaction success likelihood.
+- **Accuracy**: 82.5%
+- **Precision**: 88.7%
+- **F1 Score**: 0.887
+- Predicts success BEFORE sending, allowing preemptive optimizations
+
+## Technical Stack
+- **Language**: TypeScript 5.0
+- **Runtime**: Node.js 18+
+- **Blockchain**: Solana Web3.js
+- **ML Framework**: scikit-learn (Python)
+- **Frontend**: Next.js 15, React 18, TailwindCSS
+
+## Results
+- **99% Success Rate** for transactions
+- **Median Recovery Time**: 4.8 seconds
+- **p95 Recovery Time**: 8.2 seconds
+- **No single point of failure** with multi-RPC routing
+
+## Quick Start
+\`\`\`typescript
+import { Belay } from '@belay/sdk';
+
+const belay = new Belay({
+  rpcEndpoints: ['helius', 'triton', 'quicknode'],
+  autoRetry: true,
+  maxRetries: 3,
+  useML: true  // Enable ML optimization
+});
+
+const result = await belay.sendTransaction(transaction, [wallet]);
+\`\`\`
+
+## Impact
+BELAY eliminates the need for developers to write custom retry logic, saves users money on failed transaction fees, and provides a standardized solution for transaction reliability on Solana. By achieving a 99% success rate, it significantly improves the user experience and reduces the financial burden of blockchain transaction failures.
+    `
+  },
+  {
     id: '1',
     title: 'Censor-Analyzer',
     description: 'Social Media Censoring using visual sentiment analysis. A dynamic system that identifies and filters inappropriate content in real time on social media platforms.',
